@@ -600,7 +600,7 @@ impl<T: Storage> RaftCore<T> {
             "Sending from {from} to {to}",
             from = self.id,
             to = m.to;
-            "msg" => ?m,
+            "msg_size" => m.compute_size(),
         );
         if m.from == INVALID_ID {
             m.from = self.id;
